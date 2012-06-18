@@ -1,0 +1,16 @@
+{
+    "name": "xingzong"
+  , "author": "delong"
+  , "version": "0.9.0"
+  , "description": "follow your location as your would"
+  , "private": true
+  , "main": "server.js"
+  , "engines": ">= v0.6.0"
+  , "dependencies": {
+      "express": "2.5.8"
+    , "jade": ">= 0.0.1"
+    , "now": ">= 0.8.1"
+    , "mongoose": ">= 2.6.4"
+    , "log": ">= 1.3.0"
+  }
+}

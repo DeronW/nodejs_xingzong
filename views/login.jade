@@ -1,0 +1,23 @@
+extends layout
+
+append css
+
+append js
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js", type="text/javascript")
+    script(type='text/javascript', src='/public/js/index.js')
+
+block body
+    h1 
+        a(href="/") 行踪
+    p(class='') #{loginError}
+    form(method='POST', action='/accounts/login')
+        label
+            邮箱：
+            input(type='email', name='email', placeholder='邮箱', required='required')
+        br
+        label
+            密码：
+            input(type='password', name='password', placeholder='密码', required='required')
+        br
+        input(type='submit', value='登录')
+
