@@ -59,12 +59,12 @@ nowjs.listen(server);
 
 // Routes
 server.get('/', routes.index);
-server.get('/report', routes.report);
 server.get('/follow', routes.follow);
-server.post('/accounts/create', routes.createUser);
-server.post('/accounts/login', routes.login);
+//server.post('/accounts/create', routes.createUser);
 server.get('/accounts/login', routes.loginForm);
+server.post('/accounts/login', routes.login);
 server.post('/accoutn/logout', routes.logout);
+server.post('/report', routes.report);
 server.post('/bind', routes.bind);
 server.post('/unbind', routes.unbind);
 server.get('*', routes.req404)

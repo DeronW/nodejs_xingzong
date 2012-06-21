@@ -65,3 +65,4 @@ now.updatePosition = function(position){
     console.log(position)
     // TODO 
 }
+

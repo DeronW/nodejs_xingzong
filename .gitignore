@@ -1,1 +1,7 @@
+track/
+tmp/
 node_modules/
+public/
+*.pyc
+*~
+*.swp

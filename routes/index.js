@@ -9,8 +9,12 @@ var print = utils.print;
 var authenticate = mongodb.authenticate;
 
 exports['index'] = function(req, res) {
+    var user = req.session.user;
+    // user = {username:'u'}
 	res.render('index', {
-		loginError: ''
+        locals: {
+            user: user
+        }
 	});
 }
 exports['loginForm'] = function(req, res) {

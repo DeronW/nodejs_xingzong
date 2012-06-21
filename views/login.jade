@@ -1,23 +1,47 @@
 extends layout
 
 append css
-
+    link(href="/public/less/login.less", rel="stylesheet/less")
 append js
-    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js", type="text/javascript")
-    script(type='text/javascript', src='/public/js/index.js')
+    script(type='text/javascript', src='/public/js/login.js')
 
 block body
-    h1 
-        a(href="/") 行踪
-    p(class='') #{loginError}
-    form(method='POST', action='/accounts/login')
-        label
-            邮箱：
-            input(type='email', name='email', placeholder='邮箱', required='required')
-        br
-        label
-            密码：
-            input(type='password', name='password', placeholder='密码', required='required')
-        br
-        input(type='submit', value='登录')
+
+    .container
+        pre(class="xingzong").
+            &nbsp;
+                          ,--,                                                                                 
+                        ,--.'|         ,---,                           ,----,   ,---.        ,---,             
+             ,--,  ,--, |  |,      ,-+-. /  |  ,----._,.             .'   .`|  '   ,'\   ,-+-. /  |  ,----._,. 
+             |'. \/ .`| `--'_     ,--.'|'   | /   /  ' /          .'   .'  .' /   /   | ,--.'|'   | /   /  ' / 
+             '  \/  / ; ,' ,'|   |   |  ,"' ||   :     |        ,---, '   ./ .   ; ,. :|   |  ,"' ||   :     | 
+              \  \.' /  '  | |   |   | /  | ||   | .\  .        ;   | .'  /  '   | |: :|   | /  | ||   | .\  . 
+               \  ;  ;  |  | :   |   | |  | |.   ; ';  |        `---' /  ;--,'   | .; :|   | |  | |.   ; ';  | 
+              / \  \  \ '  : |__ |   | |  |/ '   .   . |          /  /  / .`||   :    ||   | |  |/ '   .   . | 
+            ./__;   ;  \|  | '.'||   | |--'   `---`-'| |        ./__;     .'  \   \  / |   | |--'   `---`-'| | 
+            |   :/\  \ ;;  :    ;|   |/       .'__/\_: |        ;   |  .'      `----'  |   |/       .'__/\_: | 
+            `---'  `--` |  ,   / '---'        |   :    :        `---'                  '---'        |   :    : 
+                         ---`-'                \   \  /                                              \   \  /  
+                                                `--`-'                                                `--`-'   
+    hr
+    div(class="container")
+        div(class="row span4 offset2")
+            p
+                a(href="/qq/login", class="btn btn-primary") 使用QQ登录
+            p
+                a(href="/sina/login", class="btn btn-primary") 使用新浪微博登录
+            
+        div(class="row span4")
+            - if (loginError)
+                p(class='alert alert-error') #{loginError}
+            form(method='POST', action='/accounts/login')
+                label
+                    邮箱：
+                    input(type='email', name='email', placeholder='邮箱', required='required')
+                label
+                    密码：
+                    input(type='password', name='password', placeholder='密码', required='required')
+                p
+                    a(href="/accounts/forget-password") 忘记密码？
+                    input(type='submit', class="btn btn-primary offset1", value='登录')
 
