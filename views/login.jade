@@ -37,11 +37,12 @@ block body
             form(method='POST', action='/accounts/login')
                 label
                     邮箱：
-                    input(type='email', name='email', placeholder='邮箱', required='required')
+                    input(type='email', name='email', placeholder='邮箱', required='required', focus)
                 label
                     密码：
                     input(type='password', name='password', placeholder='密码', required='required')
                 p
                     a(href="/accounts/forget-password") 忘记密码？
                     input(type='submit', class="btn btn-primary offset1", value='登录')
-
+    hr
+    include includes/footer

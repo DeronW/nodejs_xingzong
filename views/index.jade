@@ -1,6 +1,6 @@
 extends layout
 
-append css
+append less
     link(href="/public/less/index.less", rel="stylesheet/less")
 
 append js
@@ -8,48 +8,7 @@ append js
 
 block body
 
-    header(class="navbar navbar-fixed-top")
-        div(class="navbar-inner")
-            div(class="container-fluid")
-                a(class="brand", href="/") XING ZONG
-                div(class="nav-collapse collapse")
-                    ul(class="nav")
-                        li(class="active")
-                            a(href="/") 行踪
-                        li(class="")
-                            a(href="/follow") 跟踪
-
-                div(class="nav pull-right")
-                    div(class="btn-group")
-                        - if (user)
-                            a(class="btn dropdown-toggle", data-toggle="dropdown", href="#")
-                                i(class="icon-user")
-                                #{user.username}
-                                b(class="caret")
-                            ul(class="dropdown-menu")
-                                li
-                                    a(href="/accounts/profile") 个人资料
-                                li
-                                    a(href="/accounts/settings") 个人设置
-                                li(class="divider")
-                                li
-                                    a(href="#") 退出
-                        - else
-                            a(class="btn btn-primary", href="/accounts/login")
-                                i(class="icon-user")
-                                &nbsp;&nbsp;登录
-                            a(class="btn btn-primary dropdown-toggle", data-toggle="dropdown")
-                                b(class="caret")
-                            ul(class="dropdown-menu")
-                                li
-                                    a(href="/accounts/qq/login") QQ登录
-                                li
-                                    a(href="/accounts/weibo/login") 微博登录
-
-                div(class="nav pull-right")
-                    form(class="navbar-search pull-left", action="")
-                        input(type="search", class="search-query span2", placeholder="搜搜")
-
+    include includes/header
     div(class="container")
         div(class="hero-unit")
             h1 行踪
@@ -80,13 +39,5 @@ block body
                     a(class="btn", href="#") 更多 »
 
     hr
-    footer(class="footer")
-        div(class="copyright")
-            a(href="http://www.miibeian.gov.cn/")
-                font(style="color: #bbb") 京ICP备09050704号
-            Copyright © 
-            a(href="/")
-                em
-                    font(style="color:#639805") foooooot.com
-            font(style="padding: 0 5px;") all rights reserved.
+    include includes/footer
 

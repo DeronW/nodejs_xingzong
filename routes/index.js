@@ -10,8 +10,9 @@ var authenticate = mongodb.authenticate;
 
 exports['index'] = function(req, res) {
     var user = req.session.user;
-    // user = {username:'u'}
 	res.render('index', {
+        headerNavHome: 'active',
+        headerNavFollow: '',
         locals: {
             user: user
         }
@@ -39,13 +40,23 @@ exports['login'] = function(req, res) {
 	});
 }
 exports['logout'] = function(req, res) {
-	res.send('ok');
 	req.session.user = null;
+    req.render('index', {
+        locals: {
+            user: null
+        }    
+    });
 }
 exports['follow'] = function(req, res) {
 	var user = req.session.user;
 	if (user) {
-		res.render('follow', {});
+		res.render('follow', {
+            headerNavHome: '',
+            headerNavFollow: 'active',
+            locals: {
+                user: user
+            }    
+        });
 	} else {
 		res.send('403', 403);
 	}

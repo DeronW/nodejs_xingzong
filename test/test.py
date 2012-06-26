@@ -17,8 +17,8 @@ def report():
 
     deviceid = 'xz123'
     timestamp = int(1000 * time.mktime(datetime.datetime.now().timetuple()))
-    lng = 139 + random.random()
-    lat = 46 + random.random()
+    lng = 116 + random.random() / 10
+    lat = 39 + random.random() / 10
     elevation = 100 * random.random()
     accuray = 20 * random.random()
     speed = 20 * random.random()

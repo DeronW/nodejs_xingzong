@@ -49,6 +49,15 @@ function getCookie(name){
 }
 
 function updatePosition(position){
+    console.log(position);
+    /*
+    position.timestamp = parseFloat(position.timestamp);
+    position.longitude = parseFloat(position.longitude);
+    position.latitude = parseFloat(position.latitude);
+    position.elevation = parseFloat(position.elevation);
+    position.accuray = parseFloat(position.accuray);
+    position.speed = parseFloat(position.speed);
+    */
     var marker = Map.marker['xz' + position.deviceid];
     var point = new BMap.Point(position.longitude, position.latitude);
     if(marker){
@@ -57,12 +66,11 @@ function updatePosition(position){
         marker = new BMap.Marker(point, {icon: Map.icon});
         Map.marker['xz' + position.deviceid] = marker;
         Map.map.addOverlay(marker);
-        Map.map.panTo(point);
     }
+    Map.map.panTo(point);
 }
 
 now.updatePosition = function(position){
-    console.log(position)
-    // TODO 
+    updatePosition(position);
 }
 
