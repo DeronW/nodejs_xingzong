@@ -58,7 +58,7 @@ exports['follow'] = function(req, res) {
             }    
         });
 	} else {
-		res.send('403', 403);
+        res.redirect('/accounts/login');
 	}
 }
 exports['createUser'] = function(req, res) {
