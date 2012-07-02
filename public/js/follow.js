@@ -25,6 +25,10 @@ $(function() {
 	});
 });
 
+$(function(){
+    $("img[rel=popover]").popover();
+});
+
 // generate baidu MapIcon, use 5 kind of color, green, blue, yellow, red, gray
 function BMapIcon(color) {
 	var icon, index;

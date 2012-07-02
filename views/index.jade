@@ -4,13 +4,14 @@ append less
     link(href="/public/less/index.less", rel="stylesheet/less")
 
 append js
+    // script(src="/public/js/jquery.jcarousel.min.js", type='text/javascript')
     script(src="/public/js/index.js", type='text/javascript')
 
 block body
 
     include includes/header
-    div(class="container")
-        div(class="hero-unit")
+    .container
+        .hero-unit
             h1 行踪
             p
             p 时刻保护着您的安全
@@ -18,26 +19,145 @@ block body
             p
                 a(class="btn btn-primary btn-large") 下载手机应用  »
 
-        div(class="row")
+        .row
 
-            div(class="span4")
+           .span4
                 h2 功能
                 p 热爱旅行的朋友，在出门的时候是否会担心迷路？不会，因为我们有行踪定位，无论你走到哪里，都有我们的保护
                 p
                     a(class="btn", href="#") 更多 »
             
-            div(class="span4")
+            .span4
                 h2 用户
                 p 在城市中穿梭、在森林中散步、在雪山上攀登、在沙漠中穿行……我们的用户遍布中国，为您指引方向是我们责任，保障您的安全是我们的使命
                 p
                     a(class="btn", href="#") 更多 »
 
-            div(class="span4")
+            .span4
                 h2 目标
                 p 打造全方位的安全防范，为您提供良好的后援支持。无论到哪里探险，我们都会一路护送，让您平安归来。
                 p
                     a(class="btn", href="#") 更多 »
 
     hr
+
+    .container
+        .row
+            .span8(class="hot-user")
+                p 
+                    h4 看看加入行踪的朋友们
+
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+
+                div
+                    a(href="#")
+                        img(src="/public/images/browser_icon/128-ie.png")
+
+            .span4
+                ul(class="nav nav-list")
+                    li(class="nav-header")
+                        h4 最新动态
+
+                div(class="carousel-news")
+                    ul(class="nav nav-list")
+                        li
+                            a(href="#") 
+                                img(class="portrait", src="/public/images/portrait/ns_000002.jpg")
+                                p
+                                    行踪页面发布了
+                        li
+                            a(href="#")
+                                img(class="portrait", src="/public/images/portrait/ns_000003.jpg")
+                                p
+                                    我的脚印
+                        li
+                            a(href="#")
+                                img(class="portrait", src="/public/images/portrait/ns_000004.jpg")
+                                p
+                                    不知道方向
+                        li
+                            a(href="#")
+                                img(class="portrait", src="/public/images/portrait/ns_000006.jpg")
+                                p
+                                    多人一起行动的时候，刚好可以看到每个人的位置，有人掉队了也能马上知道
+                        li
+                            a(href="#")
+                                img(class="portrait", src="/public/images/portrait/nv_000008.jpg")
+                                p
+                                    终于可以不用迷路了
+                        li
+                            a(href="#")
+                                img(class="portrait", src="/public/images/portrait/nv_000009.jpg")
+                                p
+                                    紧紧的盯住他
+                        li(class="on")
+                            a(href="#")
+                                img(class="portrait", src="/public/images/portrait/nv_000012.jpg")
+                                p
+                                    老是找不到你在哪
+
     include includes/footer
 
