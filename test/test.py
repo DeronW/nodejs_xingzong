@@ -15,22 +15,27 @@ def bind_user():
 
 def report():
 
-    deviceid = 'xz123'
-    timestamp = int(1000 * time.mktime(datetime.datetime.now().timetuple()))
-    lng = 116 + random.random() / 10
-    lat = 39 + random.random() / 10
-    elevation = 100 * random.random()
-    accuray = 20 * random.random()
-    speed = 20 * random.random()
+    def send_message():
+        deviceid = 'xz123'
+        timestamp = int(1000 * time.mktime(datetime.datetime.now().timetuple()))
+        lng = 116 + random.random() / 10
+        lat = 39 + random.random() / 10
+        elevation = 100 * random.random()
+        accuray = 20 * random.random()
+        speed = 20 * random.random()
 
-    message = '{deviceid},{timestamp},{lng},{lat},{elevation},{accuray},{speed}'.format(
-            deviceid=deviceid, 
-            timestamp=timestamp, 
-            lng=lng, 
-            lat=lat, 
-            elevation=elevation, 
-            accuray=accuray, 
-            speed=speed)
+        message = '{deviceid},{timestamp},{lng},{lat},{elevation},{accuray},{speed}'.format(
+                deviceid=deviceid, 
+                timestamp=timestamp, 
+                lng=lng, 
+                lat=lat, 
+                elevation=elevation, 
+                accuray=accuray, 
+                speed=speed)
 
-    r = requests.post('http://localhost:3000/report', data={'message': message})
-    print r.text
+        r = requests.post('http://localhost:3000/report', data={'message': message})
+        print 'response %s' % r.text
+
+    while 1:
+        time.sleep(5)
+        send_message()

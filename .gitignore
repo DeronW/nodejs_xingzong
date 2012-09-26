@@ -1,7 +1,7 @@
 track/
 tmp/
 node_modules/
-public/
+public/images/
 *.pyc
 *~
 *.swp

@@ -1,0 +1,55 @@
+@import "common.less";
+
+body{
+    background-color: @backgroundColor;
+}
+.hero-unit{
+    background: url(/public/images/index_banner_2.png) right bottom no-repeat;
+}
+@media (max-width: 768px){
+    .hero-unit{
+        background: none !important;
+    }
+}
+.hot-user{
+    float: left;
+    > div{
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        float: left;
+        position: relative;
+        -webkit-transition: all 1s linear;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+    }
+}
+.carousel-news{
+    position: relative;
+    height: 328px;
+    overflow: hidden;
+    > ul{
+        position: absolute;
+        > li{
+            // padding: 5px 0;
+            a{
+                clear: both;
+                > img{
+                    float: left;
+                    width: 50px;
+                    height: 50px;
+                }
+                > p {
+                    margin-bottom: 0px;
+                    margin-left: 60px;
+                    padding: 10px;
+                    min-height: 30px;
+                }
+            }
+        }
+    }
+}
+
