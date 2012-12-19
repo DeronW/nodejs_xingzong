@@ -60,7 +60,7 @@ nowjs.listen(server);
 // Routes
 server.get('/', routes.index);
 server.get('/follow', routes.follow);
-//server.post('/accounts/create', routes.createUser);
+server.post('/accounts/create', routes.createUser);
 server.get('/accounts/login', routes.loginForm);
 server.post('/accounts/login', routes.login);
 server.get('/accounts/logout', routes.logout);
