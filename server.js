@@ -60,6 +60,8 @@ nowjs.listen(server);
 // Routes
 server.get('/', routes.index);
 server.get('/follow', routes.follow);
+server.get('/track', routes.track);
+server.get('/track/record', routes.trackRecord);
 server.post('/accounts/create', routes.createUser);
 server.get('/accounts/login', routes.loginForm);
 server.post('/accounts/login', routes.login);
@@ -73,7 +75,7 @@ server.put('*', routes.req404)
 server.del('*', routes.req404)
 
 // listen on HTTP
-server.listen(3000, function() {
+server.listen(3001, function() {
     console.log("Express server listening on port %d in %s mode", server.address().port, server.settings.env);
 });
 

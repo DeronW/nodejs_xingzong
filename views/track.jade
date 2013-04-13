@@ -5,8 +5,8 @@ append less
 
 append js
     script(src="//api.map.baidu.com/api?v=1.3")
-    script(src="/nowjs/now.js")
-    script(src="/public/js/follow.js")
+    // script(src="/nowjs/now.js")
+    script(src="/public/js/track.js")
 
 block body
     
@@ -16,14 +16,14 @@ block body
             ul(class="nav nav-pills nav-stacked")
                 li
                     &nbsp;
-                li(class="nav-header hide")
-                    监控类型
-                li(class="nav-header hide")
-                    a(href="#") 多点监控
-                li(class="nav-header active")
-                    a 锁定跟踪
                 li(class="nav-header")
-                    a(href="/track") 轨迹查看
+                    监控类型
+                li(class="nav-header")
+                    a(href="#") 多点监控
+                li(class="nav-header")
+                    a(href="/follow") 锁定跟踪
+                li(class="nav-header active")
+                    a() 轨迹查看
                     
         .map-container
             #map()

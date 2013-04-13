@@ -9,13 +9,13 @@ var print = utils.print;
 var authenticate = mongodb.authenticate;
 
 exports['index'] = function(req, res) {
-    var user = req.session.user;
+	var user = req.session.user;
 	res.render('index', {
-        headerNavHome: 'active',
-        headerNavFollow: '',
-        locals: {
-            user: user
-        }
+		headerNavHome: 'active',
+		headerNavFollow: '',
+		locals: {
+			user: user
+		}
 	});
 }
 exports['loginForm'] = function(req, res) {
@@ -32,7 +32,7 @@ exports['login'] = function(req, res) {
 		} else {
 			req.session.user = user;
 			res.cookie('userid', user._id, {
-                path: '/',
+				path: '/',
 				maxAge: 1000 * 3600 * 12
 			});
 			res.redirect('/follow');
@@ -41,25 +41,47 @@ exports['login'] = function(req, res) {
 }
 exports['logout'] = function(req, res) {
 	req.session.user = null;
-    req.render('index', {
-        locals: {
-            user: null
-        }    
-    });
+	req.render('index', {
+		locals: {
+			user: null
+		}
+	});
 }
 exports['follow'] = function(req, res) {
 	var user = req.session.user;
 	if (user) {
 		res.render('follow', {
+			headerNavHome: '',
+			headerNavFollow: 'active',
+			locals: {
+				user: user
+			}
+		});
+	} else {
+		res.redirect('/accounts/login');
+	}
+}
+exports['track'] = function(req, res) {
+	var user = req.session.user;
+	if (user) {
+        res.render('track', {
             headerNavHome: '',
-            headerNavFollow: 'active',
-            locals: {
-                user: user
-            }    
+			headerNavFollow: 'active',
+			locals: {
+				user: user
+			}
         });
 	} else {
-        res.redirect('/accounts/login');
+		res.redirect('/accounts/login');
 	}
+}
+exports['trackRecord'] = function(req, res){
+    var user = req.session.user;
+    if(user){
+        return 'uuu';
+    } else {
+        return req403(req, res);
+    }
 }
 exports['createUser'] = function(req, res) {
 	mongodb.createUser({
@@ -103,4 +125,6 @@ exports['report'] = function(req, res) {
 exports['req404'] = function(req, res) {
 	res.send('404', 404);
 }
-
+exports['req403'] = function req403(req, res){
+    res.send('403', '403');
+}
